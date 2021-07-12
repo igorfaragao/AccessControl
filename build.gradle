@@ -21,6 +21,7 @@ dependencies {
 	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310'
 	runtimeOnly 'mysql:mysql-connector-java'
 
+
 	compileOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok'
 

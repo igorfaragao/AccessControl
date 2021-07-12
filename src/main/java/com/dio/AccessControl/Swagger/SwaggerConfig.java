@@ -1,4 +1,4 @@
-package com.dio.AccessControl.swagger;
+package com.dio.AccessControl.Swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 
@@ -24,7 +25,7 @@ public class SwaggerConfig {
     public Docket apiAdmin(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dio.backend"))
+                .apis(RequestHandlerSelectors.basePackage("com.dio.AccessControl"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(apiInfo())
@@ -40,7 +41,7 @@ public class SwaggerConfig {
 
     }
     @Bean
-    private ApiInfo apiInfo() {
+    public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("API-REST")
                 .description("Api para gerenciamento de ponto de acesso")
@@ -49,6 +50,7 @@ public class SwaggerConfig {
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
                 .contact(new Contact("Igor Felipe Aragão","https://www.linkedin.com/in/igor-felipe-aragao-915ab313a/","igorfaragao@gmail.com"))
                 .build();
+
     }
 
 

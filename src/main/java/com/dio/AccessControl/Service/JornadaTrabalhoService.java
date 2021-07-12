@@ -28,8 +28,8 @@ public class JornadaTrabalhoService {
         return jornadaTrabalhoRepository.findAll();
     }
 
-    public Optional<JornadaTrabalho> getById(Long idJornada) {
-        return jornadaTrabalhoRepository.findById(idJornada);
+    public Optional<JornadaTrabalho> getById(Long idJornadaTrabalho) {
+        return jornadaTrabalhoRepository.findById(idJornadaTrabalho);
     }
 
     public JornadaTrabalho updateJornada(JornadaTrabalho jornadaTrabalho){
@@ -37,8 +37,8 @@ public class JornadaTrabalhoService {
 
     }
 
-    public void deleteJornada(Long idJornada) {
-        jornadaTrabalhoRepository.deleteById(idJornada);
+    public void deleteJornada(Long idJornadaTrabalho) {
+        jornadaTrabalhoRepository.deleteById(idJornadaTrabalho);
     }
 
 }
