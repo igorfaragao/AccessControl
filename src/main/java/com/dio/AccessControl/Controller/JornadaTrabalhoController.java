@@ -5,6 +5,7 @@ import com.dio.AccessControl.Service.JornadaTrabalhoService;
 import com.dio.AccessControl.model.JornadaTrabalho;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,18 +43,9 @@ public class JornadaTrabalhoController {
     }
     @ApiOperation("Deleta Jornada de trabalho")
       @DeleteMapping(value = "/{idJornadaTrabalho}")
-     public ResponseEntity<JornadaTrabalho> deleteByID(@PathVariable("idJornadaTrabalho")Long idJornadaTrabalho) throws Exception {
+     public ResponseEntity deleteByID(@PathVariable("idJornadaTrabalho")Long idJornadaTrabalho) throws Exception {
 
-        try{
-            jornadaTrabalhoService.deleteJornada(idJornadaTrabalho);
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-
-        }
-       return (ResponseEntity<JornadaTrabalho>) ResponseEntity.ok();
-
-
+        return  jornadaTrabalhoService.deleteJornada(idJornadaTrabalho);
 
    }
 

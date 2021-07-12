@@ -3,6 +3,7 @@ package com.dio.AccessControl.Service;
 import com.dio.AccessControl.Repository.JornadaTrabalhoRepository;
 import com.dio.AccessControl.model.JornadaTrabalho;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,8 +38,9 @@ public class JornadaTrabalhoService {
 
     }
 
-    public void deleteJornada(Long idJornadaTrabalho) {
+    public ResponseEntity deleteJornada(Long idJornadaTrabalho) {
         jornadaTrabalhoRepository.deleteById(idJornadaTrabalho);
+        return null;
     }
 
 }
